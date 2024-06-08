@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mobway_clone_app/theme/light_theme.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {super.key, required this.hintText, required this.icon, required this.obscureText, this.autofillHints});
+  const CustomTextField({super.key, required this.hintText, this.icon, this.obscureText = false, this.autofillHints});
 
   final String hintText;
-  final IconData icon;
+  final IconData? icon;
   final bool obscureText;
   final List<String>? autofillHints;
 
