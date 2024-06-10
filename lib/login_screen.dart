@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 // version text
                 const Text(
                   'Ver. 1.1.8',
-                  style: TextStyle(color: LightColors.white),
+                  style: TextStyle(color: LightColors.pureWhite),
                 ),
               ],
             ),
@@ -99,11 +99,11 @@ class _hatirlaCheckbox extends StatelessWidget {
           onChanged: (bool? newValue) {
             // İşaretleme
           },
-          activeColor: LightColors.white,
+          activeColor: LightColors.pureWhite,
         ),
         const Text(
           'Hatırla',
-          style: TextStyle(color: LightColors.white),
+          style: TextStyle(color: LightColors.pureWhite),
         ),
       ],
     );
@@ -122,7 +122,7 @@ class _mobwayLogoText extends StatelessWidget {
       style: TextStyle(
         fontSize: 40,
         fontWeight: FontWeight.bold,
-        color: LightColors.white,
+        color: LightColors.pureWhite,
       ),
     );
   }

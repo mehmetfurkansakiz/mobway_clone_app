@@ -18,7 +18,7 @@ class CustomTextField extends StatelessWidget {
         prefixIcon: Icon(icon, color: LightColors.grappleGreen),
         labelStyle: TextStyle(color: LightColors.steelyGrey, fontWeight: FontWeight.bold),
         filled: true,
-        fillColor: LightColors.white,
+        fillColor: LightColors.pureWhite,
         hintText: hintText,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),

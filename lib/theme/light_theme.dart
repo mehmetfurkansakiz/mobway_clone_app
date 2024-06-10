@@ -8,7 +8,7 @@ class LightTheme {
 
   LightTheme() {
     theme = ThemeData(
-        scaffoldBackgroundColor: LightColors.white,
+        scaffoldBackgroundColor: LightColors.pureWhite,
         appBarTheme: const AppBarTheme(
           centerTitle: true,
           elevation: 0,
@@ -18,7 +18,6 @@ class LightTheme {
 }
 
 class LightColors {
-  static const Color white = Color.fromARGB(255, 250, 250, 250);
   static const Color seaGreen = Color.fromARGB(255, 0, 161, 157);
   static const Color deepSeaBlue = Color.fromARGB(255, 0, 38, 66);
   static const Color oceanBlue = Color.fromARGB(255, 1, 58, 99);
