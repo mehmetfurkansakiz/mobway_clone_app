@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobway_clone_app/company_selection_screen.dart';
 import 'package:mobway_clone_app/login_screen.dart';
+import 'package:mobway_clone_app/theme/light_theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,8 +12,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    final LightTheme lightTheme = LightTheme();
+
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: lightTheme.theme,
       home: LoginScreen(),
     );
   }

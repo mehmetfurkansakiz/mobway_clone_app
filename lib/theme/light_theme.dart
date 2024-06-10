@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 
 class LightTheme {
   final lightColors = LightColors();
@@ -13,7 +14,6 @@ class LightTheme {
           centerTitle: true,
           elevation: 0,
           systemOverlayStyle: SystemUiOverlayStyle.light,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(16))),
         ));
   }
 }
