@@ -8,7 +8,7 @@ class LightTheme {
 
   LightTheme() {
     theme = ThemeData(
-        scaffoldBackgroundColor: LightColors.pureWhite,
+        scaffoldBackgroundColor: LightColors.silverGrey,
         appBarTheme: const AppBarTheme(
           centerTitle: true,
           elevation: 0,
@@ -27,4 +27,5 @@ class LightColors {
   static const Color grappleGreen = Color.fromARGB(255, 64, 184, 177);
   static const Color steelyGrey = Color.fromARGB(255, 141, 154, 154);
   static const Color finishFiordGreen = Color.fromARGB(255, 89, 177, 188);
+  static const Color silverGrey = Color.fromARGB(255, 206, 206, 206);
 }
