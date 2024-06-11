@@ -12,12 +12,20 @@ class CompanySelectionScreen extends StatefulWidget {
 }
 
 class _CompanySelectionScreenState extends State<CompanySelectionScreen> {
-  // Şirketlerin listesi
+  // Dummy Şirketlerin listesi
   final List<String> companies = [
     'BYM Demo',
     'BYM Two',
     'BYM Three',
     'BYM Four',
+  ];
+
+  // Dummy Sub-Şirketlerin listesi
+  final List<String> subCompanies = [
+    'Sub 1',
+    'Sub 2',
+    'Sub 3',
+    'Sub 4',
   ];
 
   @override
@@ -29,12 +37,13 @@ class _CompanySelectionScreenState extends State<CompanySelectionScreen> {
           const CustomRedBanner(
             title: 'Şirket Seçiniz',
           ),
-          _companiesListView()
+          _companiesListView() // Firmaların listelenmesi
         ],
       ),
     );
   }
 
+  // Firmaların listelenmesi
   Expanded _companiesListView() {
     return Expanded(
         child: ListView.builder(
@@ -45,7 +54,7 @@ class _CompanySelectionScreenState extends State<CompanySelectionScreen> {
           padding: const EdgeInsets.symmetric(vertical: 4.0),
           child: CustomButton(
             onPressed: () {
-              // tıklanan elevated button'a yönlendirme
+              _showSubCompanyDialog(companies[index]); //Firma secim ekrani
             },
             text: companies[index],
             backgroundColor: LightColors.pureWhite,
@@ -54,5 +63,87 @@ class _CompanySelectionScreenState extends State<CompanySelectionScreen> {
         );
       },
     ));
+  }
+
+  // Firma secim ekrani
+  void _showSubCompanyDialog(String company) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          insetPadding: const EdgeInsets.all(16),
+          child: Stack(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: LightColors.silverGrey,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: LightColors.romeoRed,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                      child: _dialogRedBanner(context), // Firma secim ekrani kirmizi banner
+                    ),
+                    _subCompaniesListView(company), // Firma secim ekrani altindaki sub-firmalar
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // Firma secim ekrani kirmizi banner
+  Row _dialogRedBanner(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const Text(
+          'Firma Seçiniz',
+          style: TextStyle(
+            color: LightColors.pureWhite,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        IconButton(
+          icon: const Icon(Icons.close, color: LightColors.pureWhite),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+  }
+
+  // Firma secim ekrani altindaki sub-firmalar
+  Expanded _subCompaniesListView(String company) {
+    return Expanded(
+      child: ListView.builder(
+        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        itemCount: subCompanies.length, // Replace with actual sub-companies count
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+            child: CustomButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              text: '$company Sub $index',
+              backgroundColor: LightColors.pureWhite,
+              textColor: LightColors.steelyGrey,
+            ),
+          );
+        },
+      ),
+    );
   }
 }
