@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobway_clone_app/company_selection_screen.dart';
 import 'package:mobway_clone_app/core/custom_button.dart';
 import 'package:mobway_clone_app/core/custom_text_field.dart';
 import 'theme/light_theme.dart';
@@ -63,7 +64,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 CustomButton(
                   text: 'Giriş Yap',
                   onPressed: () {
-                    // Giriş yapma işlemi
+                    // Giriş yapma işlemi sonrası yönlendirme
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CompanySelectionScreen()),
+                    );
                   },
                 ),
 
