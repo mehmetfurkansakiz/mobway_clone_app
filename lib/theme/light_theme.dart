@@ -10,10 +10,10 @@ class LightTheme {
     theme = ThemeData(
         scaffoldBackgroundColor: LightColors.silverGrey,
         appBarTheme: const AppBarTheme(
-          centerTitle: true,
-          elevation: 0,
-          systemOverlayStyle: SystemUiOverlayStyle.light,
-        ));
+            centerTitle: true,
+            elevation: 0,
+            systemOverlayStyle: SystemUiOverlayStyle.light,
+            iconTheme: IconThemeData(color: LightColors.pureWhite)));
   }
 }
 
