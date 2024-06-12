@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobway_clone_app/core/custom_app_bar.dart';
 import 'package:mobway_clone_app/core/custom_button.dart';
 import 'package:mobway_clone_app/core/custom_red_banner.dart';
+import 'package:mobway_clone_app/menu_screen.dart';
 import 'package:mobway_clone_app/theme/light_theme.dart';
 
 class CompanySelectionScreen extends StatefulWidget {
@@ -136,6 +137,11 @@ class _CompanySelectionScreenState extends State<CompanySelectionScreen> {
             child: CustomButton(
               onPressed: () {
                 Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MenuScreen(),
+                    ));
               },
               text: '$company Sub $index',
               backgroundColor: LightColors.pureWhite,
