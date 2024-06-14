@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobway_clone_app/core/custom_app_bar.dart';
+import 'package:mobway_clone_app/core/custom_drawer.dart';
 import 'package:mobway_clone_app/core/custom_red_banner.dart';
 import 'package:mobway_clone_app/theme/light_theme.dart';
 
@@ -10,14 +11,15 @@ class MenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
+      endDrawer: CustomDrawer(),
       body: Column(
         children: [
-          CustomRedBanner(
+          const CustomRedBanner(
             title: 'MENÜ',
           ),
           Expanded(
               child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: ListView(
               children: [
                 _menuButton('Depo Yönetimi', Icons.warehouse_outlined, context),
