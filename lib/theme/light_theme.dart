@@ -10,10 +10,15 @@ class LightTheme {
     theme = ThemeData(
         scaffoldBackgroundColor: LightColors.silverGrey,
         appBarTheme: const AppBarTheme(
-            centerTitle: true,
-            elevation: 0,
-            systemOverlayStyle: SystemUiOverlayStyle.light,
-            iconTheme: IconThemeData(color: LightColors.pureWhite)));
+          centerTitle: true,
+          elevation: 0,
+          systemOverlayStyle: SystemUiOverlayStyle.light,
+          iconTheme: IconThemeData(color: LightColors.pureWhite),
+        ),
+        drawerTheme: const DrawerThemeData(
+          backgroundColor: LightColors.pureWhite,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.horizontal(left: Radius.circular(16))),
+        ));
   }
 }
 
