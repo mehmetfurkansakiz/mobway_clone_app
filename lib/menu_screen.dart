@@ -5,6 +5,7 @@ import 'package:mobway_clone_app/core/custom_icon_button.dart';
 import 'package:mobway_clone_app/core/custom_red_banner.dart';
 import 'package:mobway_clone_app/depo_yonetimi_screen.dart';
 import 'package:mobway_clone_app/service/icon_button_model.dart';
+import 'package:mobway_clone_app/siparis_yonetimi_screen.dart';
 import 'package:mobway_clone_app/urun_yonetimi_screen.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -34,7 +35,9 @@ class MenuScreen extends StatelessWidget {
         text: 'Sipariş Yönetimi',
         icon: Icons.shopping_cart_outlined,
         onPressed: () {
-          print('Pressed to Sipariş Yönetimi!');
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const SiparisYonetimiScreen()),
+          );
         },
       ),
       IconButtonModel(
