@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobway_clone_app/core/custom_app_bar.dart';
 import 'package:mobway_clone_app/core/custom_icon_button.dart';
 import 'package:mobway_clone_app/core/custom_red_banner.dart';
+import 'package:mobway_clone_app/core/reusable_icon_button_list.dart';
 import 'package:mobway_clone_app/service/icon_button_model.dart';
 
 class FinansYonetimiScreen extends StatelessWidget {
@@ -46,25 +47,14 @@ class FinansYonetimiScreen extends StatelessWidget {
       body: Column(
         children: [
           const CustomRedBanner(title: 'Finans Yönetimi'),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: ListView.builder(
-                itemCount: finansYonetimiButtons.length,
-                itemBuilder: (context, index) {
-                  final finansYonetimiButton = finansYonetimiButtons[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: CustomIconButton(
-                      text: finansYonetimiButton.text,
-                      onPressed: finansYonetimiButton.onPressed,
-                      icon: finansYonetimiButton.icon,
-                    ),
-                  );
-                },
-              ),
+          ReusableIconButtonList(
+            buttons: finansYonetimiButtons,
+            buttonWidgetBuilder: (text, onPressed, icon) => CustomIconButton(
+              text: text,
+              onPressed: onPressed,
+              icon: icon,
             ),
-          ),
+          )
         ],
       ),
     );

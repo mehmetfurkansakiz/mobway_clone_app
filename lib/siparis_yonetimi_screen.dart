@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobway_clone_app/core/custom_app_bar.dart';
 import 'package:mobway_clone_app/core/custom_icon_button.dart';
 import 'package:mobway_clone_app/core/custom_red_banner.dart';
+import 'package:mobway_clone_app/core/reusable_icon_button_list.dart';
 import 'package:mobway_clone_app/service/icon_button_model.dart';
 
 class SiparisYonetimiScreen extends StatelessWidget {
@@ -53,25 +54,14 @@ class SiparisYonetimiScreen extends StatelessWidget {
       body: Column(
         children: [
           const CustomRedBanner(title: 'Sipariş Yönetimi'),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: ListView.builder(
-                itemCount: siparisYonetimiButtons.length,
-                itemBuilder: (context, index) {
-                  final siparisYonetimiButton = siparisYonetimiButtons[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: CustomIconButton(
-                      text: siparisYonetimiButton.text,
-                      onPressed: siparisYonetimiButton.onPressed,
-                      icon: siparisYonetimiButton.icon,
-                    ),
-                  );
-                },
-              ),
+          ReusableIconButtonList(
+            buttons: siparisYonetimiButtons,
+            buttonWidgetBuilder: (text, onPressed, icon) => CustomIconButton(
+              text: text,
+              onPressed: onPressed,
+              icon: icon,
             ),
-          ),
+          )
         ],
       ),
     );
