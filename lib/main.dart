@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobway_clone_app/login_screen.dart';
+import 'package:mobway_clone_app/view/login_screen.dart';
 import 'package:mobway_clone_app/theme/light_theme.dart';
 
 void main() {

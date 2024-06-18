@@ -3,11 +3,11 @@ import 'package:mobway_clone_app/core/custom_app_bar.dart';
 import 'package:mobway_clone_app/core/custom_drawer.dart';
 import 'package:mobway_clone_app/core/custom_icon_button.dart';
 import 'package:mobway_clone_app/core/custom_red_banner.dart';
-import 'package:mobway_clone_app/depo_yonetimi_screen.dart';
-import 'package:mobway_clone_app/finans_yonetimi_screen.dart';
+import 'package:mobway_clone_app/view/depo_yonetimi_screen.dart';
+import 'package:mobway_clone_app/view/finans_yonetimi_screen.dart';
 import 'package:mobway_clone_app/service/icon_button_model.dart';
-import 'package:mobway_clone_app/siparis_yonetimi_screen.dart';
-import 'package:mobway_clone_app/urun_yonetimi_screen.dart';
+import 'package:mobway_clone_app/view/siparis_yonetimi_screen.dart';
+import 'package:mobway_clone_app/view/urun_yonetimi_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
