@@ -70,6 +70,7 @@ class MenuScreen extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 10.0),
                   child: CustomIconButton(
+                    isColumn: true,
                     text: menuButton.text,
                     icon: menuButton.icon,
                     onPressed: menuButton.onPressed,

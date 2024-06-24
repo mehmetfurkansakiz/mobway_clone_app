@@ -43,14 +43,20 @@ class CustomIconButton extends StatelessWidget {
           children: [
             Icon(icon, size: iconSize),
             if (!isColumn) const SizedBox(width: 10),
-            Flexible(
-              child: Text(
-                text,
-                style: TextStyle(fontSize: fontSize),
-                maxLines: 2,
-                textAlign: TextAlign.center,
-              ),
-            ),
+            isColumn
+                ? Text(
+                    text,
+                    style: TextStyle(fontSize: fontSize),
+                    textAlign: TextAlign.center,
+                  )
+                : Flexible(
+                    child: Text(
+                      text,
+                      style: TextStyle(fontSize: fontSize),
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
           ],
         ),
       ),
