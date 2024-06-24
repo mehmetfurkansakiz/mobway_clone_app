@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobway_clone_app/core/custom_app_bar.dart';
+import 'package:mobway_clone_app/core/custom_drawer.dart';
 import 'package:mobway_clone_app/core/custom_icon_button.dart';
 import 'package:mobway_clone_app/core/custom_red_banner.dart';
 import 'package:mobway_clone_app/core/reusable_icon_button_list.dart';
@@ -51,6 +52,7 @@ class SiparisYonetimiScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: const CustomAppBar(),
+      endDrawer: const CustomDrawer(),
       body: Column(
         children: [
           const CustomRedBanner(title: 'Sipariş Yönetimi'),
